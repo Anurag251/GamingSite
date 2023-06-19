@@ -8,7 +8,7 @@ const BannerComponent = () => {
   return (
     <div className="banner">
       <div className="image-sec">
-        <img src={bannerImage} alt="" />
+        <img src={bannerImage} alt="banner-image" />
       </div>
 
       <div className="content-sec">
