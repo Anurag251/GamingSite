@@ -1,0 +1,307 @@
+@use './_mixin' as *
+@use './_variables' as *
+
+.custom-title
+  @include flex($justify: center)
+
+  .slash
+    img
+      height: 110px
+      width: 80px
+      object-fit: contain
+
+  .title
+    font-size: 3rem
+    line-height: 2.7rem
+    font-weight: 800
+    color: $light
+    text-align: center
+
+header
+  position: sticky
+  top: 0
+  left: 0
+  width: 100%
+  background-color: #242B34
+  height: 80px
+  z-index: 100
+
+  .wrapper
+    height: 100%
+
+  nav
+    @include grid($columns: 1fr 1fr 1fr)
+    align-items: center
+    height: 100%
+
+    .logo
+      height: 60px
+      width: 200px
+      overflow: hidden
+      @include flex($justify: center)
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: contain
+
+    .navs
+      @include flex($justify: center)
+      gap: 10px
+
+      li
+        .navbtn
+          padding: .3rem 1rem
+          color: $light
+          cursor: pointer
+          font-size: 1.2rem
+
+.other-games
+  background-color: $purple
+  padding: 2rem 0
+
+  .other-game-list
+    .game-image
+      height: 60px
+      max-width: 170px
+      width: 100%
+      object-fit: contain
+
+.banner
+  position: relative
+
+  .image-sec
+    height: 60vh
+    width: 100%
+
+    img
+      @include image()
+
+  .content-sec
+    max-width: 1000px
+    width: 100%
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+    color: $light
+
+    h1
+      font-size: 3.5rem
+      font-weight: 400
+
+      span
+        font-weight: 700
+        color: $lime
+
+    h2
+      font-size: 2rem
+      font-weight: 500
+
+      span
+        color: $btn
+        font-weight: 600
+
+    .qr-sec
+      height: 200px
+      margin-top: 2rem
+      padding-top: 2rem
+      border-top: 1px solid rgba($light, .3)
+
+      img
+        @include image()
+        object-fit: contain
+
+    .button-group
+      width: 100%
+      @include flex($justify: center)
+      margin-top: 2rem
+
+    .download
+      width: 500px
+      font-size: 1.6rem
+      font-weight: 600
+      padding: .5rem 1rem
+      background-color: $btn
+      color: $light
+      border: 2px solid $light
+      box-shadow: 0 0 10px rgba($btn, .8)
+      cursor: pointer
+
+    .company
+      @include flex($justify: center)
+      margin-top: 4rem
+      font-size: 1.8rem
+      color: rgba($light, .3)
+      font-weight: 400
+
+      img
+        height: 40px
+        width: 160px
+        object-fit: contain
+
+.tournament-platform
+  @include flex($justify: center)
+  gap: 1rem
+  padding: 2rem 0
+  background-color: $bg
+
+  .title-sec
+    font-size: 2.2rem
+    font-weight: 400
+    max-width: 540px
+    color: $light
+
+    span
+      font-weight: 700
+      font-style: italic
+
+  .no-of-game-sec
+    @include flex($justify: flex-start)
+
+    .active-gamers
+      text-align: center
+      border-right: 1px solid rgba($light, .4)
+      margin-right: 1rem
+      padding-right: 1rem
+
+      &:nth-child(2)
+        border-right: none
+        margin-right: 0
+        padding-right: 0
+
+      h4
+        font-size: 2.3rem
+        font-weight: 700
+        color: $cyan
+
+      p
+        font-size: 1.2rem
+        color: $light
+
+.how-it-work
+  .wrapper
+    @include flex($justify: center)
+
+    .mySwiper
+      max-width: 1000px
+      margin-top: 3rem
+
+  .item
+    @include grid($columns: 1fr 1.5fr)
+    align-items: center
+
+    .content
+      h5
+        font-size: 1.7rem
+        font-weight: 600
+        color: $cyan
+
+      .number
+        -webkit-text-stroke: 2px
+        -webkit-text-stroke-color: $light
+        -webkit-text-fill-color: transparent
+        font-size: 20rem
+        line-height: 17rem
+        font-weight: 800
+
+      p
+        font-size: 1.3rem
+        font-weight: 400
+        color: $light
+
+    .image-sec
+      position: relative
+      height: 30rem
+      @include flex($justify: center)
+
+      &::before
+        content: ''
+        height: 16rem
+        width: 100%
+        background-color: $cyan
+
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        height: 100%
+
+.why-gamers-love
+  .item
+    margin-bottom: 3rem
+
+    &:nth-child(even)
+      .inner
+        @include grid($columns: 1.5fr 1fr)
+        grid-gap: 3rem
+
+      .image-sec
+        .image1
+          transform: rotate(9deg)
+
+      .content-sec
+        grid-area: 1
+
+    .item-title
+      margin: 2rem 0
+      text-align: center
+      font-size: 2rem
+      color: $light
+
+      span
+        color: $lime
+        font-weight: 700
+
+    .inner
+      @include grid($columns: 1fr 1.5fr)
+      grid-gap: 3rem
+      align-items: center
+
+    .image-sec
+      position: relative
+      height: 36rem
+
+      .image1
+        position: absolute
+        top: 2rem
+        left: 0
+        height: 17rem
+        width: 100%
+        object-fit: contain
+        transform: rotate(-9deg)
+        z-index: 1
+
+      .image2
+        position: absolute
+        bottom: 2rem
+        left: 0
+        height: 17rem
+        width: 100%
+        object-fit: contain
+        z-index: 2
+
+    .content-sec
+      padding: 4rem 0 4rem 2rem
+      background-color: $darkBg
+
+      li
+        color: $light
+        margin-bottom: 2rem
+        font-size: 1.7rem
+        @include flex($justify: flex-start)
+        gap: 1rem
+
+        &:nth-last-child(1)
+          margin-bottom: 0
+
+        i
+          text-align: center
+          height: 40px
+          width: 40px
+          @include flex($justify: center)
+          background-color: $bg
+          color: $lime
+          font-size: 2.5rem
