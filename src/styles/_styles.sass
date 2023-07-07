@@ -12,10 +12,18 @@
 
   .title
     font-size: 3rem
-    line-height: 2.7rem
+    line-height: 3rem
     font-weight: 800
     color: $light
     text-align: center
+
+  .title-desc
+    margin-top: .3rem
+    font-size: 1.6rem
+    line-height: 1.9rem
+    text-align: center
+    color: $light
+    font-weight: 400
 
 header
   position: sticky
@@ -305,3 +313,271 @@ header
           background-color: $bg
           color: $lime
           font-size: 2.5rem
+
+.RatingComponent
+  overflow: hidden
+  position: relative
+
+  .char-image, .flag-image
+    position: absolute
+    top: 40%
+    left: 25%
+    transform: translate(-50%, -50%)
+    z-index: 1
+
+    img
+      height: 25rem
+      width: 25rem
+      object-fit: contain
+
+  .flag-image
+    left: 65%
+
+    img
+      height: 40rem
+      width: 40rem
+
+  .rating-list
+    position: relative
+    z-index: 2
+    @include grid($columns: 1fr 1fr 1fr)
+    grid-gap: 2rem
+    padding: 13rem 0 7rem
+
+    .RatingCard
+      @include flex($justify: stretch)
+      background-color: $bg
+      padding: 1rem
+      gap: 1rem
+
+      .image-sec
+        height: 7rem
+        width: 7rem
+        border-radius: 50%
+        overflow: hidden
+
+        img
+          @include image()
+
+      .content
+        width: calc( 100% - 7rem )
+        color: $light
+
+        .name
+          font-size: 1.3rem
+
+        .wins
+          font-size: 1rem
+          font-weight: 400
+          margin: .1rem 0
+          color: darken($light, 30%)
+
+        .stars
+          font-size: .8rem
+          @include flex($justify: flax-start)
+          gap: .2rem
+          color: #F5AA37
+          margin: .4rem 0
+
+        p
+          font-size: .9rem
+          color: darken($light, 30%)
+
+.Withdrawal-section
+  height: 100vh
+  position: relative
+
+  .Withdrawal
+    position: absolute
+    left: 40%
+    top: 57%
+    transform: translate(-50%, -50%)
+    @include flex($justify: center)
+    flex-direction: column
+
+    .money
+      font-size: 6rem
+      line-height: 6rem
+      color: $lime
+      font-weight: 700
+
+    p
+      font-size: 1.8rem
+      color: $light
+      max-width: 27rem
+      margin: 0 auto
+      text-align: center
+      margin-top: .5rem
+
+    h5
+      font-size: 1rem
+      color: $light
+      font-weight: 400
+
+    .payment-list
+      @include flex($justify: center)
+      gap: 1.5rem
+      padding: 1rem 2rem
+      border-top: 1px solid rgba($light, .3)
+      margin-top: 1rem
+
+      img
+        height: 5.5rem
+        width: 5.5rem
+        object-fit: contain
+
+.JoinUs-sec
+  height: 100vh
+
+.JoinUs
+  height: 100%
+
+  .wrapper
+    height: 100%
+
+  .inner
+    height: 100%
+    @include flex($justify: center)
+    flex-direction: column
+
+  p
+    text-align: center
+    font-size: 2.2rem
+    margin-bottom: 4rem
+    color: $light
+
+  .join-us-image
+    height: 15rem
+    width: 40rem
+
+    img
+      @include image()
+      object-fit: contain
+
+.Download-sec
+  .custom-title
+    margin-top: 5rem
+
+.Download
+  height: 60vh
+  @include flex($justify: center)
+
+  .button-group
+    width: 100%
+    @include flex($justify: center)
+    margin-top: 2rem
+
+  .download
+    width: 500px
+    font-size: 1.6rem
+    font-weight: 600
+    padding: .5rem 1rem
+    background-color: $btn
+    color: $light
+    border: 2px solid $light
+    box-shadow: 0 0 10px rgba($btn, .8)
+    cursor: pointer
+
+.FAQs
+  margin-top: 5rem
+  padding: 5rem 0
+  background-color: $bg
+
+  .FAQs-list
+    border: 1px solid lighten($dark, 70%)
+
+    .FAQsCard
+      color: $light
+      padding: 1.5rem
+      border-bottom: 1px solid lighten($dark, 70%)
+      cursor: pointer
+
+      &.active
+        .FAQs-title
+          i
+            transform: rotate(0)
+
+        .FAQs-body
+          max-height: 200px
+          overflow-y: auto
+
+      &:nth-last-child(1)
+        border-bottom: none
+
+      .FAQs-title
+        font-size: 1.2rem
+        width: 100%
+        @include flex($justify: space-between)
+
+        i
+          font-size: 1.5rem
+          text-shadow: 2px 0px 2px rgba($light, .6), 2px 1px 2px rgba($light, .9)
+          transform: rotate(-45deg)
+          @include trans()
+
+      .FAQs-body
+        overflow: hidden
+        max-height: 0
+        @include trans()
+
+        .desc
+          padding: .5rem
+          font-size: .9rem
+          line-height: 1.5rem
+          color: darken($light, 10%)
+
+.HowToDownload
+  margin-top: 4rem
+
+  .image-list
+    @include flex($justify: center)
+    flex-direction: column
+
+    img
+      height: 30rem
+      width: 100%
+      object-fit: contain
+
+    svg
+      height: 8rem
+      width: 15rem
+      @include flex($justify: center)
+      text-align: center
+
+footer
+  background-color: $bg
+
+  .footer-item-list
+    @include grid($columns: 1fr 1fr 1fr)
+    align-items: center
+    padding: 5rem 0
+
+    .logo-sec
+      height: 13rem
+      width: 13rem
+
+      svg
+        height: 100%
+        width: 100%
+
+    .item
+      ul
+        li
+          margin-bottom: 1rem
+
+        button
+          font-size: 1.2rem
+          color: $light
+
+  .social-links
+    width: 100%
+    padding: 2rem 0
+    background-color: $darkBg
+
+    .all-links
+      @include flex($justify: space-around)
+
+      button
+        font-size: 2.5rem
+        color: $light
+        cursor: pointer
